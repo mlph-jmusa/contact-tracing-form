@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.input-label {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.input-field {
+  font-size: 14px !important;
+  color: white !important;
+}
+
+InputLabel {
+  color: red;
 }
