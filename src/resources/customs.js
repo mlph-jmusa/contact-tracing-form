@@ -6,23 +6,23 @@ import {
   const CustomTextField = withStyles({
     root: {
       '& label.Mui-focused': {
-        color: 'white',
+        color: 'black',
       },
       '& .MuiInput-underline:after': {
-        borderBottomColor: 'white',
+        borderBottomColor: 'black',
       },
       '& .MuiInput-underline:before': {
-        borderBottomColor: 'white',
+        borderBottomColor: 'black',
       },
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
-          borderColor: 'white',
+          borderColor: 'black',
         },
         '&:hover fieldset': {
-          borderColor: 'white',
+          borderColor: 'black',
         },
         '&.Mui-focused fieldset': {
-          borderColor: 'white',
+          borderColor: 'black',
         },
       },
     },

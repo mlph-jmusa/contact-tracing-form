@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CustomTextField from '../resources/customs.js';
-import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -16,10 +15,6 @@ function ContactTracingForm() {
   const [contact, setContact] = useState("")
 
   const [list, setList] = useState([]);
-
-  const nameInput = React.useRef();
-  const addressInput = React.useRef();
-  const contactInput = React.useRef();
 
   function onSubmitForm(e) {
     e.preventDefault();
@@ -37,10 +32,6 @@ function ContactTracingForm() {
     setName("");
     setAddress("");
     setContact("");
-
-    nameInput.current.value = "";
-    addressInput.current.value = "";
-    contactInput.current.value = "";
   }
 
   return (
@@ -48,16 +39,18 @@ function ContactTracingForm() {
         <Container>
             <h4>Contact Tracing Form</h4>
             <Row>
-                <CustomTextField label="Name" onChange={event => setName(event.target.value)} ref={nameInput}/>
+                <CustomTextField label="Name" value={name} onChange={event => setName(event.target.value)}/>
             </Row>
             <br/>
-                <Row><CustomTextField label="Address" onChange={event => setAddress(event.target.value)} ref={addressInput}/></Row>
+                <Row><CustomTextField label="Address" value={address} onChange={event => setAddress(event.target.value)}/></Row>
             <br/>
-                <Row><CustomTextField type="number" label="Contact" onChange={event => setContact(event.target.value)} ref={contactInput}/></Row>
+                <Row><CustomTextField label="Contact" value={contact} onChange={event => setContact(event.target.value)}/></Row>
             <br/>
             <Row>
               <Input variant="filled" type="submit" value="Submit" />
             </Row>
+            <br/>
+              <h5>List count: { list.length }</h5>
             <br/>
             <Link to={{pathname: "/list", state: { data: list}}}>Go to list</Link>
         </Container>

@@ -7,15 +7,20 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { useLocation } from "react-router-dom"
+import { useHistory, useLocation } from 'react-router-dom';
+import { useEffect, useCallback } from 'react';
+import { Button } from 'react-bootstrap';
 
 export default function ContactListPage() {
     const location = useLocation();
-    const { data } = location.state;
+    const { data } = location.state || { data: [] } ;
+    const history = useHistory();
 
     var list = [...Object.values(data)];
 
+    useEffect(() => {
+        window.history.replaceState({data: []}, '');
+    });
 
     return (
         <Container>
@@ -39,7 +44,7 @@ export default function ContactListPage() {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Link to="/"> Back </Link>
+            <Button onClick={this.state.h}>Back</Button>
         </Container>
     );
 }

@@ -16,14 +16,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: gray;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -42,14 +41,8 @@
 .input-label {
   font-size: 14px !important;
   font-weight: bold !important;
-  color: white !important;
 }
 
 .input-field {
   font-size: 14px !important;
-  color: white !important;
-}
-
-InputLabel {
-  color: red;
 }
